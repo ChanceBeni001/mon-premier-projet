@@ -1,11 +1,21 @@
-# --- Mon premier programme interactif ---
+# --- Mon programme qui prend des décisions ---
 
-# 1. On pose une question et on stocke la réponse dans la variable 'nom'
 nom = input("Comment t'appelles-tu ? ")
+print(f"Salut {nom} !")
 
-# 2. On affiche un message personnalisé en utilisant cette variable
-print(f"Enchanté {nom} ! Bienvenue dans le monde de la programmation Python.")
+# On demande l'année de naissance
+annee_texte = input("En quelle année es-tu né(e) ? (ex: 1980) : ")
 
-# 3. On demande l'âge
-age = input("Quel âge as-tu ? ")
-print(f"Wow, {age} ans ! C'est le meilleur âge pour dompter les machines.")
+# On transforme le texte en vrai nombre pour faire un calcul mathématique
+annee_naissance = int(annee_texte)
+age = 2026 - annee_naissance
+
+print(f"Tu as donc {age} ans.")
+
+# --- LE CERVEAU DU PROGRAMME (La condition) ---
+if age >= 40:
+    print("La quarantaine passée... C'est l'âge de la sagesse et de l'expertise ! 🧠")
+else:
+    print("La jeunesse est avec toi ! Prêt à conquérir le monde du code ? 🚀")
+
+print("Fin du programme, merci d'avoir joué !")
