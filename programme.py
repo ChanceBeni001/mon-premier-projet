@@ -1,23 +1,27 @@
-import random
+# --- Découverte des Listes en Python ---
 
-# L'ordinateur choisit un nombre secret entre 1 et 10
-nombre_secret = random.randint(1, 10)
-tentative = 0
+# 1. On crée une liste avec 3 objets de départ
+inventaire = ["Épée en fer", "Bouclier en bois", "Potion de soin"]
 
-print("🎯 BIENVENUE AU JEU DU NOMBRE SECRET ! 🎯")
-print("Je viens de choisir un nombre entre 1 et 10. À toi de deviner !")
+print("🎒 Voici ton inventaire de départ :")
+print(inventaire)
 
-# La boucle : TANT QUE la tentative est différente du nombre secret
-while tentative != nombre_secret:
-    # On demande un nombre au joueur
-    reponse = input("Propose un nombre : ")
-    tentative = int(reponse)
-    
-    # On donne un indice
-    if tentative < nombre_secret:
-        print("C'est PLUS GRAND ! ⬆️")
-    elif tentative > nombre_secret:
-        print("C'est PLUS PETIT ! ⬇️")
+print("-" * 30)
 
-# Si on sort de la boucle, c'est qu'on a trouvé !
-print(f"🎉 BRAVO CHANCE ! Tu as trouvé, le nombre secret était bien {nombre_secret} !")
+# 2. On accède à un élément précis grâce à son numéro (index)
+# Rappel : 0 = premier objet
+premier_objet = inventaire[0]
+print(f"⚔️ Ton premier objet (index 0) est : {premier_objet}")
+
+print("-" * 30)
+
+# 3. On ajoute un nouvel objet à la fin de la liste avec .append()
+print("🎁 Tu trouves un trésor !")
+inventaire.append("Casque en or")
+
+print("🎒 Ton inventaire mis à jour :")
+print(inventaire)
+
+# 4. On compte le nombre d'objets dans la liste avec len()
+nombre_objets = len(inventaire)
+print(f"📊 Tu as actuellement {nombre_objets} objets sur toi.")
