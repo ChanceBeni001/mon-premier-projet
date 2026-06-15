@@ -1,27 +1,16 @@
-# --- Découverte des Listes en Python ---
+# --- Parcourir une liste avec une boucle FOR ---
 
-# 1. On crée une liste avec 3 objets de départ
-inventaire = ["Épée en fer", "Bouclier en bois", "Potion de soin"]
+# Notre inventaire complet
+inventaire = ["Épée en fer", "Bouclier en bois", "Potion de soin", "Casque en or"]
 
-print("🎒 Voici ton inventaire de départ :")
-print(inventaire)
+print("⚔️ --- MODE COMBAT REQUIS --- ⚔️")
+print("Tu ouvres ton sac pour inspecter ton équipement :")
+print("-" * 40)
 
-print("-" * 30)
+# La boucle FOR : 'objet' est une variable temporaire qui va recevoir
+# le nom de chaque équipement, l'un après l'autre.
+for objet in inventaire:
+    print(f" 👉 [ÉQUIPÉ] : {objet}")
 
-# 2. On accède à un élément précis grâce à son numéro (index)
-# Rappel : 0 = premier objet
-premier_objet = inventaire[0]
-print(f"⚔️ Ton premier objet (index 0) est : {premier_objet}")
-
-print("-" * 30)
-
-# 3. On ajoute un nouvel objet à la fin de la liste avec .append()
-print("🎁 Tu trouves un trésor !")
-inventaire.append("Casque en or")
-
-print("🎒 Ton inventaire mis à jour :")
-print(inventaire)
-
-# 4. On compte le nombre d'objets dans la liste avec len()
-nombre_objets = len(inventaire)
-print(f"📊 Tu as actuellement {nombre_objets} objets sur toi.")
+print("-" * 40)
+print("Tout est prêt, tu peux aller affronter les monstres ! 🐉")
