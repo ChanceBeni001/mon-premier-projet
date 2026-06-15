@@ -1,21 +1,23 @@
-# --- Mon programme qui prend des décisions ---
+import random
 
-nom = input("Comment t'appelles-tu ? ")
-print(f"Salut {nom} !")
+# L'ordinateur choisit un nombre secret entre 1 et 10
+nombre_secret = random.randint(1, 10)
+tentative = 0
 
-# On demande l'année de naissance
-annee_texte = input("En quelle année es-tu né(e) ? (ex: 1980) : ")
+print("🎯 BIENVENUE AU JEU DU NOMBRE SECRET ! 🎯")
+print("Je viens de choisir un nombre entre 1 et 10. À toi de deviner !")
 
-# On transforme le texte en vrai nombre pour faire un calcul mathématique
-annee_naissance = int(annee_texte)
-age = 2026 - annee_naissance
+# La boucle : TANT QUE la tentative est différente du nombre secret
+while tentative != nombre_secret:
+    # On demande un nombre au joueur
+    reponse = input("Propose un nombre : ")
+    tentative = int(reponse)
+    
+    # On donne un indice
+    if tentative < nombre_secret:
+        print("C'est PLUS GRAND ! ⬆️")
+    elif tentative > nombre_secret:
+        print("C'est PLUS PETIT ! ⬇️")
 
-print(f"Tu as donc {age} ans.")
-
-# --- LE CERVEAU DU PROGRAMME (La condition) ---
-if age >= 40:
-    print("La quarantaine passée... C'est l'âge de la sagesse et de l'expertise ! 🧠")
-else:
-    print("La jeunesse est avec toi ! Prêt à conquérir le monde du code ? 🚀")
-
-print("Fin du programme, merci d'avoir joué !")
+# Si on sort de la boucle, c'est qu'on a trouvé !
+print(f"🎉 BRAVO CHANCE ! Tu as trouvé, le nombre secret était bien {nombre_secret} !")
